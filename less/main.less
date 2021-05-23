@@ -20,12 +20,16 @@ body {
 
 
 // Universal styling for buttons & links
-.bttn-white {
-  background-color: @white;
+.bttn {
   padding: 10px 20px;
   border: 2px solid @dark-grey;
   text-transform: uppercase;
   font-weight: 700;
+}
+
+.bttn-white {
+  .bttn();
+  background-color: @white;
   color: @dark-grey;
 }
 
@@ -36,11 +40,8 @@ body {
 }
 
 .bttn-dk-grey {
+  .bttn();
   background-color: @dark-grey;
-  padding: 10px 20px;
-  border: 2px solid @dark-grey;
-  text-transform: uppercase;
-  font-weight: 700;
   color: @white;
 }
 
@@ -77,46 +78,74 @@ header {
   z-index: 1000000;
 }
 
-a.nav-link {
-    color: #fff;
-    font-family: 'Open Sans';
-    text-transform: uppercase;
-    font-weight: 700;
+.navbar-light .navbar-nav .nav-link {
+  color: #fff;
+  font-family: 'Open Sans';
+  text-transform: uppercase;
+  font-weight: 700;
 }
 
-a.nav-link:hover {
-  color: @dark-grey;
+.navbar-light .navbar-nav .nav-link:hover {
+  color: @dark-grey !important;
   transition: @fade;
 }
 
+@media (max-width: 767px) {
+  ul.navbar-nav {
+    margin: 25vh 68px;
+  }
 
+  li.nav-item {
+    margin: 15px 0px;
+    font-size: 1.75em;
+  }
 
+  .bttn-header {
+    margin-left: 0;
+  }
+
+  .col-md-4.card {
+    margin: 35px !important;
+  }
+}
+
+.navbar-collapse {
+  justify-content: flex-end;
+}
+
+.navbar-toggler {
+  border: 0px;
+}
 
 img.header-mark {
-    position: absolute;
-    width: 75px;
-    margin-top: -15px;
+  position: absolute;
+  width: 75px;
+  margin-top: -15px;
   }
 
 .jumbotron {
-  background: url(../img/bc-main-hero.png) center;
-  padding: 10rem;
+  background: url(../img/bc-main-hero.png) center no-repeat;
+  background-size: cover;
+  height: 80vh;
   border-radius: 0;
+  p {
+    font-size: 2em;
+    margin-bottom: 2em;
+  }
 }
 
 .card {
   border: 0px;
 }
 
-.cta-red {
-  background-color: @red;
-  padding: 50px;
+.cta-grey {
+  background-color: @grey;
+  padding: 75px 0;
   h2 {
     color: @white;
     font-size: 3em;
   }
 }
-
 
 .social-link {
   span {
@@ -129,13 +158,13 @@ img.header-mark {
 }
 
 .email-signup {
-  background: url(../img/cta-emailform.png);
-  height: 350px;
+  background: url(../img/cta-emailform.png) center no-repeat;
+  background-size: cover;
   padding: 85px 0;
 }
 
 .form-group {
-  margin: 0 10px;
+  margin: 15px 10px;
   label {
     display: none;
   }
@@ -148,6 +177,17 @@ img.header-mark {
     padding: 22px 15px;
   }
 }
+
+.bttn-dk-grey.submit-bttn {
+    margin: 15px 0;
+}
+
+@media (max-width: 991px) {
+  .bttn-dk-grey.submit-bttn {
+    margin: 15px 25px;
+  }
+}
+
 
 
 footer {
