@@ -1,1 +1,162 @@
-@import: "variables";
+@import "variables";
+
+
+body {
+  font-family: @font;
+  overflow-x: hidden;
+  text-align: center;
+  h1, .display-3 {
+    font-weight: 900;
+    text-transform: uppercase;
+  }
+  h2, h3, h4, h5, h6 {
+    font-weight: 700;
+    text-transform: uppercase;
+  }
+  p {
+    font-weight: 300;
+  }
+}
+
+
+// Universal styling for buttons & links
+.bttn-white {
+  background-color: @white;
+  padding: 10px 20px;
+  border: 2px solid @dark-grey;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: @dark-grey;
+}
+
+.bttn-white:hover {
+  background-color: @dark-grey;
+  color: @white;
+  transition: @fade;
+}
+
+.bttn-dk-grey {
+  background-color: @dark-grey;
+  padding: 10px 20px;
+  border: 2px solid @dark-grey;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: @white;
+}
+
+.bttn-dk-grey:hover {
+  background-color: @white;
+  color: @dark-grey;
+  transition: @fade;
+}
+
+.bttn-header {
+  background-color: @dark-grey;
+  padding: 5px 10px;
+  margin-left: 30px;
+  border: 2px solid @dark-grey;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: @white;
+}
+
+.bttn-dk-grey:hover, .bttn-header:hover {
+  background-color: @white;
+  color: @dark-grey;
+  transition: @fade;
+}
+
+
+
+
+// Universial styling for header and nav
+header {
+  background-color: @red;
+  position: fixed;
+  width: 100%;
+  z-index: 1000000;
+}
+
+a.nav-link {
+    color: #fff;
+    font-family: 'Open Sans';
+    text-transform: uppercase;
+    font-weight: 700;
+}
+
+a.nav-link:hover {
+  color: @dark-grey;
+  transition: @fade;
+}
+
+
+
+
+img.header-mark {
+    position: absolute;
+    width: 75px;
+    margin-top: -15px;
+  }
+
+.jumbotron {
+  background: url(../img/bc-main-hero.png) center;
+  padding: 10rem;
+  border-radius: 0;
+}
+
+.card {
+  border: 0px;
+}
+
+.cta-red {
+  background-color: @red;
+  padding: 50px;
+  h2 {
+    color: @white;
+    font-size: 3em;
+  }
+}
+
+
+.social-link {
+  span {
+    color: @red;
+  }
+  img {
+    width: 45px;
+    margin: 5px;
+  }
+}
+
+.email-signup {
+  background: url(../img/cta-emailform.png);
+  height: 350px;
+  padding: 85px 0;
+}
+
+.form-group {
+  margin: 0 10px;
+  label {
+    display: none;
+  }
+  .form-control {
+    border: 2px solid @dark-grey;
+    border-radius: 0
+    ;
+  }
+  input {
+    padding: 22px 15px;
+  }
+}
+
+
+footer {
+  background-color: @dark-grey;
+  h4, p {
+    color: @white;
+  }
+  p {
+    margin-bottom: 0;
+  }
+}
+
