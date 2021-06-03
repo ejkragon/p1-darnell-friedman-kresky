@@ -19,6 +19,8 @@
   <!-- CSS Links -->
   <link rel="stylesheet" href="css/main.css">
 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.3.0/ekko-lightbox.min.js" integrity="sha512-Y2IiVZeaBwXG1wSV7f13plqlmFOx8MdjuHyYFVoYzhyRr3nH/NMDjTBSswijzADdNzMyWNetbLMfOpIPl6Cv9g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
   <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </head>
@@ -142,10 +144,10 @@
       <div class="container">
         <div class="row">
           <div class="col-md-2">
-            <img class="img-fluid" src="img/bc-gallery-1.png" alt="Bandit Coffee Window" title="Bandit Coffee Window">
+            <a href="img/bc-gallery-1.png" data-toggle="lightbox" data-gallery="example-gallery"><img class="img-fluid" src="img/bc-gallery-1.png" alt="Bandit Coffee Window" title="Bandit Coffee Window"></a>
           </div>
           <div class="col-md-2">
-            <img class="img-fluid" src="img/bc-gallery-2.png" alt="Bandit Coffee Cups" title="Bandit Coffee Cups">
+            <a href="img/bc-gallery-2.png" data-toggle="lightbox" data-gallery="example-gallery"><img class="img-fluid" src="img/bc-gallery-2.png" alt="Bandit Coffee Cups" title="Bandit Coffee Cups"></a>
           </div>
           <div class="col-md-2">
             <img class="img-fluid" src="img/bc-gallery-3.png" alt="Bandit Coffee Building" title="Bandit Coffee Building">
@@ -182,5 +184,21 @@
     integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
     integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  <script src="js/main.js"></script>
+    $(document).on('click', '[data-toggle="lightbox"]', function(event) {
+      event.preventDefault();
+      $(this).ekkoLightbox();
+  });
+
+  $(this).ekkoLightbox({
+    alwaysShowClose: true,
+    onShown: function() {
+        console.log('Checking our the events huh?');
+    },
+    onNavigate: function(direction, itemIndex)
+        console.log('Navigating '+direction+'. Current item: '+itemIndex);
+    }
+    ...
+});
 </body>
 </html>
