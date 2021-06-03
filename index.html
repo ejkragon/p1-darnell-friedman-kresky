@@ -17,9 +17,12 @@
   <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,600;0,700;0,800;1,400;1,600;1,700;1,800&display=swap" rel="stylesheet">
 
   <!-- CSS Links -->
+  <link rel="stylesheet" href="lightbox/src/css/lightbox.css">
   <link rel="stylesheet" href="css/main.css">
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.3.0/ekko-lightbox.min.js" integrity="sha512-Y2IiVZeaBwXG1wSV7f13plqlmFOx8MdjuHyYFVoYzhyRr3nH/NMDjTBSswijzADdNzMyWNetbLMfOpIPl6Cv9g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+  <!---Lightbox feature
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.3.0/ekko-lightbox.min.js" integrity="sha512-Y2IiVZeaBwXG1wSV7f13plqlmFOx8MdjuHyYFVoYzhyRr3nH/NMDjTBSswijzADdNzMyWNetbLMfOpIPl6Cv9g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>-->
 
   <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -144,22 +147,34 @@
       <div class="container">
         <div class="row">
           <div class="col-md-2">
-            <a href="img/bc-gallery-1.png" data-toggle="lightbox" data-gallery="example-gallery"><img class="img-fluid" src="img/bc-gallery-1.png" alt="Bandit Coffee Window" title="Bandit Coffee Window"></a>
+            <a href="img/bc-gallery-1.png" class="item1" data-lightbox="image-1">
+              <img class="img-fluid" src="img/bc-gallery-1.png" alt="Bandit Coffee Window" title="Bandit Coffee Window">
+            </a>
           </div>
           <div class="col-md-2">
-            <a href="img/bc-gallery-2.png" data-toggle="lightbox" data-gallery="example-gallery"><img class="img-fluid" src="img/bc-gallery-2.png" alt="Bandit Coffee Cups" title="Bandit Coffee Cups"></a>
+            <a href="img/bc-gallery-2.png" class="item2" data-lightbox="image-1">
+              <img class="img-fluid" src="img/bc-gallery-2.png" alt="Bandit Coffee Cups" title="Bandit Coffee Cups">
+            </a>
           </div>
           <div class="col-md-2">
-            <img class="img-fluid" src="img/bc-gallery-3.png" alt="Bandit Coffee Building" title="Bandit Coffee Building">
+            <a href="img/bc-gallery-3.png" class="item3" data-lightbox="image-1">
+              <img class="img-fluid" src="img/bc-gallery-3.png" alt="Bandit Coffee Building" title="Bandit Coffee Building">
+            </a>
           </div>
           <div class="col-md-2">
-            <img class="img-fluid" src="img/bc-gallery-4.png" alt="Bandit Coffee Pastry" title="Bandit Coffee Pastry">
+            <a href="img/bc-gallery-4.png" class="item4" data-lightbox="image-1">
+              <img class="img-fluid" src="img/bc-gallery-4.png" alt="Bandit Coffee Pastry" title="Bandit Coffee Pastry">
+            </a>
           </div>
           <div class="col-md-2">
-            <img class="img-fluid" src="img/bc-gallery-5.png" alt="Bandit Coffee Bag" title="Bandit Coffee Bag">
+            <a href="img/bc-gallery-5.png" class="item5" data-lightbox="image-1">
+              <img class="img-fluid" src="img/bc-gallery-5.png" alt="Bandit Coffee Bag" title="Bandit Coffee Bag">
+            </a>
           </div>
           <div class="col-md-2">
-            <img class="img-fluid" src="img/bc-gallery-6.png" alt="Bandit Coffee Latte" title="Bandit Coffee Latte">
+            <a href="img/bc-gallery-6.png" class="item6" data-lightbox="image-1">
+              <img class="img-fluid" src="img/bc-gallery-6.png" alt="Bandit Coffee Latte" title="Bandit Coffee Latte">
+            </a>
           </div>
         </div>
       </div>
@@ -184,21 +199,7 @@
     integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
     integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  <script src="lightbox/dist/js/lightbox-plus-jquery.js"></script>
   <script src="js/main.js"></script>
-    $(document).on('click', '[data-toggle="lightbox"]', function(event) {
-      event.preventDefault();
-      $(this).ekkoLightbox();
-  });
-
-  $(this).ekkoLightbox({
-    alwaysShowClose: true,
-    onShown: function() {
-        console.log('Checking our the events huh?');
-    },
-    onNavigate: function(direction, itemIndex)
-        console.log('Navigating '+direction+'. Current item: '+itemIndex);
-    }
-    ...
-});
 </body>
 </html>
